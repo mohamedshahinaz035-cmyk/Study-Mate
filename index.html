@@ -86,16 +86,15 @@
 
     <script>
         function redirectToDetails(event) {
-            event.preventDefault(); // بيمنع الصفحة تعمل ريفريش وتطير البيانات
-            
-            // قراءة القيمة اللي الطالب داس عليها جوه قائمة نظام الدراسة
+            event.preventDefault(); //  
+      
             var selectedLang = document.getElementById("langSelect").value;
             
             // شرط التوجيه
             if (selectedLang === "ar") {
-                window.location.href = "details-ar.html"; // لو اختار عربي يفتح صفحة العربي
+                window.location.href = "details-ar.html";    
             } else if (selectedLang === "en") {
-                window.location.href = "details-en.html"; // لو اختار لغات يفتح صفحة الإنجليزي
+                window.location.href = "details-en.html";   
             }
         }
     </script>
