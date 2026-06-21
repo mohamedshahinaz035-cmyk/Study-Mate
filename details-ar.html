@@ -29,15 +29,15 @@
         label { font-weight: bold; font-size: 14px; color: #333; }
         select { padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 15px; width: 100%; box-sizing: border-box; }
         
-        /* ⚠️ السطر السحري: إخفاء الصناديق في البداية */
+        
         .hidden-box { 
-            display: none; /* مخفي تماماً ومحدش شايفه في الأول */
+            display: none;  
             flex-direction: column;
             gap: 15px;
             background-color: #f9f9f9;
             padding: 15px;
             border-radius: 6px;
-            border-right: 4px solid #008080; /* خط تيركواز جمالي على اليمين */
+            border-right: 4px solid #008080; 
             box-sizing: border-box; 
         }
         
@@ -85,8 +85,8 @@
             <label>الشعبة (الصف الثاني الثانوي)</label>
             <select>
                 <option value="">اختر الشعبة</option>
-                <option value="science"> علمي علوم</option>
-                <option value="science"> علمي رياضه</option>
+              
+                <option value="science"> علمي </option>
                 <option value="arts">أدبي</option>
                 
             </select>
@@ -96,8 +96,8 @@
             <label>التخصص (الصف الثالث الثانوي)</label>
             <select>
                 <option value="">اختر التخصص</option>
-                <option value="bio">علمي علوم</option>
-                <option value="math">علمي رياضة</option>
+          
+                <option value="math">علمي  </option>
                 <option value="arts3">أدبي</option>
             </select>
         </div>
@@ -106,37 +106,37 @@
     </form>
 
     <script>
-        // الوظيفة الأولى: تظهر بوكس السنة الدراسية لما نختار نوع التعليم
+           
         function showGradeBox() {
             var type = document.getElementById("typeSelect").value;
             
-            // تصفير وتطهير الشاشة من أي اختيارات قديمة عشان الشغل يبقى نضيف
+             
             document.getElementById("gradeBox").style.display = "none";
             document.getElementById("bacTracksBox").style.display = "none";
             document.getElementById("generalGrade2Box").style.display = "none";
             document.getElementById("generalGrade3Box").style.display = "none";
             document.getElementById("gradeSelect").value = "";
 
-            // لو الطالب اختار تخصص فعلاً (مش سيبه فاضي)، نظهر له بوكس السنة الدراسية
+         
             if (type !== "") { 
                 document.getElementById("gradeBox").style.display = "flex"; 
             }
         }
 
-        // الوظيفة الثانية: شجرة القرارات النهائية بناءً على (نوع التعليم + السنة)
+         
         function showFinalTracks() {
             var type = document.getElementById("typeSelect").value;
             var grade = document.getElementById("gradeSelect").value;
 
-            // إخفاء كل التفرعات الأخيرة قبل تطبيق الشرط الجديد
+                
             document.getElementById("bacTracksBox").style.display = "none";
             document.getElementById("generalGrade2Box").style.display = "none";
             document.getElementById("generalGrade3Box").style.display = "none";
 
-            // [الشرط 1]: لو سنة أولى خلاص تمام مش هيظهر حاجة تاني (اقفلي الدالة هنا)
+            
             if (grade === "1") return; 
 
-            // [الشرط 2]: لو بكالوريا وسنة (تانية أو تالتة) تظهر الـ 4 مسارات
+              
             if (type === "bac" && (grade === "2" || grade === "3")) {
                 document.getElementById("bacTracksBox").style.display = "flex";
             } 
