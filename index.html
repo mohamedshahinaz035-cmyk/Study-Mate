@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html  >
 <head>
      
@@ -62,7 +62,7 @@
 </head>
 <body>
 
-    <img src="study22.jpeg" width="300">
+    <img src="C:\Users\Elhamd\Desktop\Study Mate\study22.jpeg" width="300">
     
     <h1>Study mate</h1>
     <h2>Sign up</h2>
@@ -86,15 +86,16 @@
 
     <script>
         function redirectToDetails(event) {
-            event.preventDefault(); //  
-      
+            event.preventDefault();  
+            
+            
             var selectedLang = document.getElementById("langSelect").value;
             
-            // شرط التوجيه
+            
             if (selectedLang === "ar") {
-                window.location.href = "details-ar.html";    
+                window.location.href = "details-ar.html";  
             } else if (selectedLang === "en") {
-                window.location.href = "details-en.html";   
+                window.location.href = "details-en.html";  
             }
         }
     </script>
