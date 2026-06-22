@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
@@ -13,7 +13,7 @@
             margin: 0;
             padding-top: 50px;
             font-family: Arial, sans-serif;
-            direction: rtl; /* اتجاه الشاشة عربي من اليمين لليسار */
+            direction: rtl;  
         }
         img {
              position: absolute; 
@@ -29,7 +29,7 @@
         label { font-weight: bold; font-size: 14px; color: #333; }
         select { padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 15px; width: 100%; box-sizing: border-box; }
         
-        
+         
         .hidden-box { 
             display: none;  
             flex-direction: column;
@@ -37,7 +37,7 @@
             background-color: #f9f9f9;
             padding: 15px;
             border-radius: 6px;
-            border-right: 4px solid #008080; 
+            border-right: 4px solid #008080;  
             box-sizing: border-box; 
         }
         
@@ -47,7 +47,7 @@
 </head>
 <body>
 
-    <img src="study22.jpeg" width="300">
+    <img src="C:\Users\Elhamd\Desktop\Study Mate\study22.jpeg" width="300">
     
     <h1>اكمل بياناتك الدراسية</h1>
     <br>
@@ -69,24 +69,36 @@
                 <option value="3">الصف الثالث الثانوي</option>
             </select>
         </div>
+        
 
         <div id="bacTracksBox" class="hidden-box">
             <label>مسار البكالوريا</label>
             <select>
                 <option value="">اختر المسار</option>
-                <option value="track1">المسار الأول (مادة 1 + مادة 2)</option>
-                <option value="track2">المسار الثاني (مادة 3 + مادة 4)</option>
-                <option value="track3">المسار الثالث (مادة 5 + مادة 6)</option>
-                <option value="track4">المسار الرابع (مادة 7 + مادة 8)</option>
+                <option value="track1">المسار الأول </option>
+                <option value="track2">المسار الثاني  </option>
+                <option value="track3">المسار الثالث </option>
+                <option value="track4">المسار الرابع  </option>
             </select>
+            <div id="subjectContainer" style="display:none;">
+    <label>Subject</label>
+    <select id="subject">
+        <option value="">Choose Subject</option>
+    </select>
+</div>
+
+<option value="track1">الطب وعلوم الحياة</option>
+<option value="track2">الهندسة وعلوم الحاسب</option>
+<option value="track3">الأعمال</option>
+<option value="track4">الآداب والفنون</option>
         </div>
 
         <div id="generalGrade2Box" class="hidden-box">
             <label>الشعبة (الصف الثاني الثانوي)</label>
             <select>
                 <option value="">اختر الشعبة</option>
-              
-                <option value="science"> علمي </option>
+                <option value="science"> علمي  </option>
+                
                 <option value="arts">أدبي</option>
                 
             </select>
@@ -96,8 +108,8 @@
             <label>التخصص (الصف الثالث الثانوي)</label>
             <select>
                 <option value="">اختر التخصص</option>
-          
-                <option value="math">علمي  </option>
+                <option value="bio">علمي  </option>
+               
                 <option value="arts3">أدبي</option>
             </select>
         </div>
@@ -106,49 +118,49 @@
     </form>
 
     <script>
-           
+     
         function showGradeBox() {
             var type = document.getElementById("typeSelect").value;
             
-             
+ 
             document.getElementById("gradeBox").style.display = "none";
             document.getElementById("bacTracksBox").style.display = "none";
             document.getElementById("generalGrade2Box").style.display = "none";
             document.getElementById("generalGrade3Box").style.display = "none";
             document.getElementById("gradeSelect").value = "";
 
-         
+   
             if (type !== "") { 
                 document.getElementById("gradeBox").style.display = "flex"; 
             }
         }
 
-         
+ 
         function showFinalTracks() {
             var type = document.getElementById("typeSelect").value;
             var grade = document.getElementById("gradeSelect").value;
 
-                
+          
             document.getElementById("bacTracksBox").style.display = "none";
             document.getElementById("generalGrade2Box").style.display = "none";
             document.getElementById("generalGrade3Box").style.display = "none";
 
-            
+      
             if (grade === "1") return; 
 
-              
+     
             if (type === "bac" && (grade === "2" || grade === "3")) {
                 document.getElementById("bacTracksBox").style.display = "flex";
             } 
-            // [الشرط 3]: لو ثانوي عام
+           
             else if (type === "general") {
                 if (grade === "2") { 
-                    document.getElementById("generalGrade2Box").style.display = "flex"; // تانية ثانوي علمي/أدبي
+                    document.getElementById("generalGrade2Box").style.display = "flex";  
                 } else if (grade === "3") { 
-                    document.getElementById("generalGrade3Box").style.display = "flex"; // تالتة ثانوي تخصصات
+                    document.getElementById("generalGrade3Box").style.display = "flex";  
                 }
             }
         }
     </script>
 </body>
-</html>
+</html>  
